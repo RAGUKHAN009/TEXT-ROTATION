@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <title>TEXT IN ROUND SHAPE</title>
+</head>
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background-color: black;
+    }
+
+    .circle {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        animation: 20s spin infinite linear;
+        color: wheat;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .text span {
+        position: absolute;
+        left: 50%;
+        transform-origin: 0% 100px;
+        filter: drop-shadow(0px 0px 20px #6b6b6b);
+    }
+
+    img {
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px #6b6b6b;
+
+    }
+
+    .ImgColor {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+    }
+
+    h1 {
+        color: wheat;
+        font-family: 'Raleway', sans-serif;
+        text-decoration: overline ;
+        font-size: 3vw;
+    }
+</style>
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+<body>
+    <div class="circle">
+
+        <img src="./my picture.jpg" alt="">
+
+        <div class="ImgColor">
+
+        </div>
+        <div class="text">
+            <p>RAGU KHAN -RAGU KHAN -RAGU KHAN -RAGU KHAN- </p>
+        </div>
+    </div>
+
+    <h1>FRONT END WEB DEVELOPER</h1>
+
+</body>
+
+<!--  -->
+
+<script>
+    const text = document.querySelector('.text p');
+    text.innerHTML = text.innerText.split('').map(
+        (char, i) =>
+            `<span style= "transform:rotate(${i * 8.3}deg)">${char}</span>`
+    ).join('');
+</script>
+
+</html>
